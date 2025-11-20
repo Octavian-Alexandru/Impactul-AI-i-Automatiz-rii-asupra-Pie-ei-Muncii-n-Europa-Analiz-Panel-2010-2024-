@@ -1,0 +1,1 @@
+# Impactul-AI-i-Automatiz-rii-asupra-Pie-ei-Muncii-n-Europa-Analiz-Panel-2010-2024-
