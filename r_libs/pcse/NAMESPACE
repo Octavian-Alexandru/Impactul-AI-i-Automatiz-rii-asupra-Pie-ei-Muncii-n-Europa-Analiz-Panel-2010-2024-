@@ -1,0 +1,11 @@
+# Default NAMESPACE created by R
+# Remove the previous line if you edit this file
+
+# Export all names
+exportPattern(".")
+
+S3method(summary, pcse)
+S3method(vcovPC, default)
+
+importFrom("stats",
+           "model.frame", "model.matrix", "na.omit", "pt", "resid")

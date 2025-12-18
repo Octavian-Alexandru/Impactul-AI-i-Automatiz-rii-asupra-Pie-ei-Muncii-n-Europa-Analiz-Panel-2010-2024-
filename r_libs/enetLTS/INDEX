@@ -1,0 +1,18 @@
+coef.enetLTS            coefficients from the 'enetLTS' object
+cv.enetLTS              Cross-validation for the 'enetLTS' object
+enetLTS                 Robust and Sparse Methods for High Dimensional
+                        Linear and Binary and Multinomial Regression
+fitted.enetLTS          the fitted values from the '"enetLTS"' object.
+lambda00                Upper limit of the penalty parameter for
+                        'family="binomial"'
+nonzeroCoef.enetLTS     nonzero coefficients indices from the
+                        '"enetLTS"' object
+plot.enetLTS            plots from the '"enetLTS"' object
+plotCoef.enetLTS        coefficients plots from the '"enetLTS"' object
+plotDiagnostic.enetLTS
+                        diagnostics plots from the '"enetLTS"' object
+plotResid.enetLTS       residuals plots from the '"enetLTS"' object
+predict.enetLTS         make predictions from the '"enetLTS"' object.
+print.enetLTS           print from the '"enetLTS"' object
+residuals.enetLTS       the residuals from the '"enetLTS"' object
+weights.enetLTS         binary weights from the '"enetLTS"' object

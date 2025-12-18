@@ -1,0 +1,35 @@
+accessors               Access or set information on resampling-based
+                        prediction error results
+aggregate.perry         Aggregate resampling-based prediction error
+                        results
+bootControl             Control object for bootstrap samples
+bootSamples             Bootstrap samples
+cost                    Prediction loss
+cvFolds                 Cross-validation folds
+foldControl             Control object for cross-validation folds
+perry                   Resampling-based prediction error for fitted
+                        models
+perry-deprecated        Deprecated functions in package 'perry'
+perry-package           Resampling-Based Prediction Error Estimation
+                        for Regression Models
+perryFit                Resampling-based prediction error for model
+                        evaluation
+perryPlot               Plot resampling-based prediction error results
+perryReshape            Reshape resampling-based prediction error
+                        results
+perrySelect             Model selection via resampling-based prediction
+                        error measures
+perrySplits             Data splits for resampling-based prediction
+                        error measures
+perryTuning             Resampling-based prediction error for tuning
+                        parameter selection
+randomSplits            Random data splits
+reperry                 Recompute resampling-based prediction error
+                        measures
+setupPerryPlot          Set up a plot of resampling-based prediction
+                        error results
+splitControl            Control object for random data splits
+subset.perry            Subsetting resampling-based prediction error
+                        results
+summary.perry           Summarize resampling-based prediction error
+                        results

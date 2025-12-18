@@ -1,0 +1,5 @@
+cluster.boot            Bootstrapped multi-way standard error
+                        clustering
+cluster.vcov            Multi-way standard error clustering
+petersen                Simulation of clustering with firm and time
+                        effects.

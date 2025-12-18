@@ -1,0 +1,248 @@
+Changes in robustHD version 0.8.3
+
+    + C++ code no longer includes R.h when including RcppArmadillo.h.
+
+    + Replaced deprecated function aes_string() from package ggplot2 with
+      aes() and .data pronoun.
+
+
+Changes in robustHD version 0.8.2
+
+    + Minor fixes in C++ code to avoid deprecated functions in Armadillo 15.0.
+
+    + Cleaned up unused variable in C++ code for sparseLTS().
+
+
+Changes in robustHD version 0.8.1
+
+    + Fix in C++ code for rlars() to avoid elementwise multiplication of row
+      and column vector due to new version of RcppArmadillo being stricter
+      regarding dimensions.
+
+    + Minor fix in help file for function coefPlot().
+
+
+Changes in robustHD version 0.8.0
+
+    + Removed deprecated functions.
+
+    + Added rstandard() method for standardized residuals rather than
+      residuals(standardize = TRUE).
+
+    + Added DOI's to references in help files.
+
+    + Minor change in behavior of diagnosticPlot() for the regression
+      diagnostic plot of sparse LTS results when the number of selected
+      variables is large compared to the number of observations. Added
+      clear documentation why this plot may fail in such a situation.
+
+    + Added metainformation on proteins, genes, and cancer cell lines to
+      the NCI-60 cancer cell panel data.
+
+    + Bugfix of inconsistent argument names of the internal generic function
+      getComponent() one of its methods.
+
+
+
+Changes in robustHD version 0.7.4
+
+    + Bugfix in C++ code: deprecated argument of insert_rows() and
+      insert_cols() no longer used.
+
+
+Changes in robustHD version 0.7.3
+
+    + Bugfix in sparseLTS(): function calls for fitting the model on training
+      sets (when selecting lambda via prediction error estimation) are now
+      evaluated in the correct environment.
+
+
+Changes in robustHD version 0.7.2
+
+    + Added CITATION file.
+
+    + Added reference to JOSS paper in package help file.
+
+    + Added URL and BugReports fields to DESCRIPTION file.
+
+
+Changes in robustHD version 0.7.1
+
+    + Unit tests are now run automatically with R CMD check.
+
+    + Help file of sparseLTS() now correctly documents that arguments for
+      selecting the optimal value of the penalty parameter are ignored if
+      only one value of the penalty parameter is supplied.
+
+
+Changes in robustHD version 0.7.0
+
+    + Re-implemented plots and added functions setupCoefPlot(),
+      setupCritPlot(), and setupDiagnosticPlot() to extract all
+      the relevant information.
+
+    + Removed deprecated functions.
+
+    + Function partialOrder() for finding the order of the smallest or
+      largest values of a vector is now exported.
+
+    + Added NCI-60 cancer cell panel data.
+
+    + Added coef(), fitted(), and residuals() methods for objects of class
+      "perrySeqModel".
+
+    + Updated broken links in documentation.
+
+
+
+Changes in robustHD version 0.6.1
+
+    + Internal C++ functions for testing are now properly registered.
+
+
+Changes in robustHD version 0.6.0
+
+    + Method for function weights() is now used to retrieve robustness weights
+      from objects of class "sparseLTS" (with argument type = "robustness").
+
+    + C++ functions are now properly registered.
+
+    + The alternative back end for sparse least trimmed squares from package
+      sparseLTSEigen is no longer supported and can no longer be used.
+
+
+
+Changes in robustHD version 0.5.1
+
+    + Explicitly calling C++ function std::abs() rather than abs() to avoid
+      clang warning.
+
+    + Correctly importing functions head() and tail() from package 'utils' and
+      function devAskNewPage from package 'grDevices'.
+
+
+
+Changes in robustHD version 0.5.0
+
+    + Added functionality for (robust) groupwise least angle regression.
+
+    + Added TopGear car data.
+
+    + Diagnostic plots now allow to pass arguments to covMcd().
+
+    + Removed PCA step from data cleaning RLARS to consolidate code.
+
+    + Updated package dependencies.
+
+
+
+Changes in robustHD version 0.4.0
+
+    + sparseLTS() no longer uses subsampling algorithm in the special case of
+      alpha = 1.
+
+    + sparseLTS() now has argument 'normalize' to specify whether the predictor
+      variables should be normalized.
+
+    + sparseLTS() now computes objective function with coefficients for
+      normalized data (if applicable).
+
+    + Most required packages are now imports rather than depends.
+
+
+
+Changes in robustHD version 0.3.2
+
+    + Bugfixes in sparseLTS() preventing errors for high-dimensional data.
+
+
+Changes in robustHD version 0.3.1
+
+    + rlars now uses perryFit() instead of perryTuning() for prediction error
+      estimation.
+
+    + Bugfix in rlars() allowing the number of variables to be sequenced to be
+      larger than half the number of observations.
+
+    + Bugfix in sparseLTS() in case of only one predictor variable.
+
+    + Added tests for C++ implementation of the lasso.
+
+
+Changes in robustHD version 0.3.0
+
+    + Redesign of the class structure.
+
+    + Redesign of how C++ back end is called.
+
+    + Functionality of sparseLTSGrid() now included in sparseLTS();
+      sparseLTSGrid() is now a deprecated wrapper function.
+
+    + Restructured internal code for computing initial subsets for sparse LTS.
+
+    + rlars() now supports data cleaning RLARS, with an extra PCA step for
+      high-dimensional data.
+
+    + New argument 's' in rlars() to select the steps along the sequence for
+      which to compute submodels
+
+    + fortify() and diagnosticPlot() methods for class "seqModel".
+
+    + Bugfix in predict() method for "sparseLTS" if object was computed without
+      intercept.
+
+
+
+Changes in robustHD version 0.2.2
+
+    + Bugfix in sparseLTS() for more stability of the results.
+
+    + Bugfix in winsorize(): weights are now correctly returned as vector for
+      a matrix with only one column.
+
+    + Bugfix in diagnosticPlot(): previous setting of devAskNewPage() is now
+      retained on exit.
+
+
+Changes in robustHD version 0.2.1
+
+    + Bugfix in rlars(): formula method now only adds function call and model
+      terms if the default method returns an "rlars" object, not if only the
+      sequence is returned.
+
+    + Bugfix in rlars(): argument cl is now preferred over argument ncores for
+      parallel computing, as stated in the help file.
+
+    + Plots are no longer using the opts() function from package ggplot2, which
+      is deprecated since ggplot2 version 0.9.2.
+
+
+Changes in robustHD version 0.2.0
+
+    + Graphics are now based on package ggplot2 instead of lattice.
+
+    + Prediction error estimation is now based on package perry instead of
+      cvTools.
+
+    + Parallel computing for sparseLTS() now available via OpenMP.
+
+    + rlars() is now using C++ code for variable sequencing, including
+      parallelization of certain tasks via OpenMP.  Further parallel
+      computing is implemented on the R level via package parallel.
+
+    + sparseLTSGrid() and rlars() now allow model selection based on the
+      prediction error.
+
+    + coef(), fitted(), residuals() and wt() methods now have argument
+      'drop' to control whether to reduce the dimension if possible.
+
+    + Renamed components 'weight' and 'raw.weights' of sparse LTS models to
+      'wt' and 'raw.wt', and renamed the accessor function accordingly to wt().
+
+    + Print methods for "sparseLTS" and "sparseLTSGrid" now only show non-zero
+      coefficients by default; also added argument to print method for "rlars".
+
+    + sparseLTS() and sparseLTSGrid() now store the raw fitted values.
+
+    + Bugfixes in C++ code for sparseLTS() and fastLasso() to prevent memory
+      related errors.

@@ -1,0 +1,48 @@
+AIC.seqModel            Information criteria for a sequence of
+                        regression models
+TopGear                 Top Gear car data
+coef.seqModel           Extract coefficients from a sequence of
+                        regression models
+coefPlot                Coefficient plot of a sequence of regression
+                        models
+corHuber                Robust correlation based on winsorization
+critPlot                Optimality criterion plot of a sequence of
+                        regression models
+diagnosticPlot          Diagnostic plots for a sequence of regression
+                        models
+fitted.seqModel         Extract fitted values from a sequence of
+                        regression models
+getScale                Extract the residual scale of a robust
+                        regression model
+grplars                 (Robust) groupwise least angle regression
+lambda0                 Penalty parameter for sparse LTS regression
+nci60                   NCI-60 cancer cell panel
+partialOrder            Find partial order of smallest or largest
+                        values
+perry.seqModel          Resampling-based prediction error for a
+                        sequential regression model
+plot.seqModel           Plot a sequence of regression models
+predict.seqModel        Predict from a sequence of regression models
+residuals.seqModel      Extract residuals from a sequence of regression
+                        models
+rlars                   Robust least angle regression
+robustHD-package        Robust Methods for High-Dimensional Data
+rstandard.seqModel      Extract standardized residuals from a sequence
+                        of regression models
+setupCoefPlot           Set up a coefficient plot of a sequence of
+                        regression models
+setupCritPlot           Set up an optimality criterion plot of a
+                        sequence of regression models
+setupDiagnosticPlot     Set up a diagnostic plot for a sequence of
+                        regression models
+sparseLTS               Sparse least trimmed squares regression
+standardize             Data standardization
+tsBlocks                Construct predictor blocks for time series
+                        models
+tslars                  (Robust) least angle regression for time series
+                        data
+tslarsP                 (Robust) least angle regression for time series
+                        data with fixed lag length
+weights.sparseLTS       Extract outlier weights from sparse LTS
+                        regression models
+winsorize               Data cleaning by winsorization

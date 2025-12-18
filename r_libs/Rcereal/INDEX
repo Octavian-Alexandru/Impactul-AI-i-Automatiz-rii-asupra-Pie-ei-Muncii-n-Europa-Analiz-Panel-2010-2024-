@@ -1,0 +1,4 @@
+last_version            Return the latest version of cereal on the
+                        GitHub.
+list_version            List version(s) of cereal on GitHub.
+update_version          Update installed cereal headers

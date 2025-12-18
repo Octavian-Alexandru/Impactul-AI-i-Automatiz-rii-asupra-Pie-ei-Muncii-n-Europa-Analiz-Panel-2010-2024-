@@ -1,0 +1,6 @@
+merge.literanger        Merge two random forests
+predict.literanger      Literanger prediction
+read_literanger         De-serialize random forest
+train                   Train forest using ranger for multiple
+                        imputation algorithms.
+write_literanger        Serialize random forest
