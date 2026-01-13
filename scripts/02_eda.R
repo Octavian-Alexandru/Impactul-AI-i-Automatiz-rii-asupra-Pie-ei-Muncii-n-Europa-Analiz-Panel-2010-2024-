@@ -17,6 +17,9 @@ df <- readRDS(file.path(processed_path, "analysis_data.rds"))
 output_figs <- "output/figures/"
 if (!dir.exists(output_figs)) dir.create(output_figs, recursive = TRUE)
 
+output_tabs <- "output/tables/"
+if (!dir.exists(output_tabs)) dir.create(output_tabs, recursive = TRUE)
+
 message("--- Start Analiza Exploratorie ---")
 
 # 2. Statistici Descriptive
@@ -28,6 +31,40 @@ cor_matrix <- cor(numeric_vars, use = "complete.obs")
 
 png(file.path(output_figs, "correlation_matrix.png"), width = 800, height = 800)
 corrplot(cor_matrix, method = "circle", type = "upper", tl.col = "black", tl.srt = 45)
+dev.off()
+
+# Statistici descriptive (tabel)
+desc_stats <- purrr::map_df(numeric_vars, ~tibble(
+  n = sum(!is.na(.)),
+  mean = mean(., na.rm = TRUE),
+  sd = sd(., na.rm = TRUE),
+  min = min(., na.rm = TRUE),
+  p25 = quantile(., 0.25, na.rm = TRUE),
+  median = median(., na.rm = TRUE),
+  p75 = quantile(., 0.75, na.rm = TRUE),
+  max = max(., na.rm = TRUE)
+), .id = "variable")
+
+write.csv(desc_stats, file.path(output_tabs, "descriptive_stats.csv"), row.names = FALSE)
+
+# Grafice distributii (histograme + boxplot)
+num_long <- numeric_vars %>%
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "value")
+
+png(file.path(output_figs, "distributions_hist.png"), width = 1000, height = 800)
+ggplot(num_long, aes(x = value)) +
+  geom_histogram(bins = 10, fill = "#4C78A8", color = "white") +
+  facet_wrap(~ variable, scales = "free") +
+  theme_minimal() +
+  labs(title = "Distributii variabile numerice", x = "Valoare", y = "Frecventa")
+dev.off()
+
+png(file.path(output_figs, "distributions_boxplot.png"), width = 1000, height = 800)
+ggplot(num_long, aes(x = variable, y = value)) +
+  geom_boxplot(fill = "#72B7B2", outlier.alpha = 0.7) +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = "Boxplot pentru variabile numerice", x = "Variabila", y = "Valoare")
 dev.off()
 
 # 3. Clustering (K-Means) - Cerința 2.e

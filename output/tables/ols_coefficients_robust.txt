@@ -1,0 +1,15 @@
+Robust SE (HC1) for model: m4 
+
+
+t test of coefficients:
+
+                    Estimate Std. Error t value Pr(>|t|)  
+(Intercept)       -25.091438  11.292570 -2.2219  0.04209 *
+DESI_AI            -0.419649   0.280253 -1.4974  0.15504  
+STEM_GRAD          -0.137909   0.107033 -1.2885  0.21710  
+ln_GDP_CAP          3.247973   1.188130  2.7337  0.01538 *
+RegionEast          1.435867   0.683474  2.1008  0.05297 .
+DESI_AI:STEM_GRAD   0.016909   0.011668  1.4492  0.16786  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+

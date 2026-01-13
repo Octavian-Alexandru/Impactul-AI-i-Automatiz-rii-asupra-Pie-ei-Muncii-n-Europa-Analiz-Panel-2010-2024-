@@ -1,0 +1,31 @@
+=== Panel model selection tests (FE vs RE) ===
+
+Model formula:
+EMP_TECH ~ DESI_AI + STEM_GRAD + ln_GDP_CAP + GOV_RD + DIG_SKILLS
+
+--- F test (FE vs pooled) ---
+
+	F test for individual effects
+
+data:  form
+F = 7.378, df1 = 26, df2 = 22, p-value = 5.662e-06
+alternative hypothesis: significant effects
+
+
+--- LM test (RE vs pooled) ---
+
+	Lagrange Multiplier Test - (Breusch-Pagan)
+
+data:  form
+chisq = 15.264, df = 1, p-value = 9.348e-05
+alternative hypothesis: significant effects
+
+
+--- Hausman test (FE vs RE) ---
+
+	Hausman Test
+
+data:  form
+chisq = 3.4747, df = 5, p-value = 0.6272
+alternative hypothesis: one model is inconsistent
+

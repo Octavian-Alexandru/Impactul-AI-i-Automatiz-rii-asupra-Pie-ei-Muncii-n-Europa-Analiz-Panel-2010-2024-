@@ -1,0 +1,56 @@
+Diagnostics for model: m4 
+
+
+Call:
+lm(formula = EMP_TECH ~ DESI_AI * STEM_GRAD + ln_GDP_CAP + Region, 
+    data = train)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.2110 -0.4444 -0.1243  0.4395  2.2963 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)   
+(Intercept)       -25.09144    7.87049  -3.188  0.00611 **
+DESI_AI            -0.41965    0.23366  -1.796  0.09266 . 
+STEM_GRAD          -0.13791    0.10946  -1.260  0.22697   
+ln_GDP_CAP          3.24797    0.85471   3.800  0.00174 **
+RegionEast          1.43587    0.69715   2.060  0.05723 . 
+DESI_AI:STEM_GRAD   0.01691    0.01062   1.592  0.13233   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.027 on 15 degrees of freedom
+Multiple R-squared:  0.5958,	Adjusted R-squared:  0.4611 
+F-statistic: 4.422 on 5 and 15 DF,  p-value: 0.01126
+
+
+--- Shapiro (normalitate) ---
+
+	Shapiro-Wilk normality test
+
+data:  resid_best
+W = 0.93522, p-value = 0.1751
+
+
+--- Breusch-Pagan (heteroscedasticitate) ---
+
+	studentized Breusch-Pagan test
+
+data:  best_model
+BP = 3.6252, df = 5, p-value = 0.6045
+
+
+--- VIF (multicoliniaritate) ---
+          DESI_AI         STEM_GRAD        ln_GDP_CAP            Region 
+        16.659940         12.596910          4.593631          2.368383 
+DESI_AI:STEM_GRAD 
+        21.499100 
+
+--- RESET (forma functionala) ---
+
+	RESET test
+
+data:  best_model
+RESET = 2.949, df1 = 6, df2 = 9, p-value = 0.07068
+
