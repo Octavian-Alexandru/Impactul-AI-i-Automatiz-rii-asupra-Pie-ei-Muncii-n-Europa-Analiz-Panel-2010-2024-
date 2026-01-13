@@ -1,0 +1,35 @@
+=== Panel residual diagnostics ===
+
+--- Shapiro (normalitate) ---
+
+	Shapiro-Wilk normality test
+
+data:  resid_re
+W = 0.98228, p-value = 0.6026
+
+
+--- Breusch-Pagan (heteroscedasticitate) ---
+
+	studentized Breusch-Pagan test
+
+data:  re_model
+BP = 8.9769, df = 5, p-value = 0.11
+
+
+--- Durbin-Watson (autocorelatie) ---
+
+	Durbin-Watson test for serial correlation in panel models
+
+data:  form
+DW = 1.8529, p-value = 0.2318
+alternative hypothesis: serial correlation in idiosyncratic errors
+
+
+--- Breusch-Godfrey (autocorelatie) ---
+
+	Breusch-Godfrey/Wooldridge test for serial correlation in panel models
+
+data:  form
+chisq = 0.40656, df = 2, p-value = 0.816
+alternative hypothesis: serial correlation in idiosyncratic errors
+
